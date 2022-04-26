@@ -1,47 +1,80 @@
 "use script";
 
-//const arr = [1, 2, 3, 4];
+// const a = 5,
+//   b = a;
+// console.log(b + 5);
 
-//---------------------- massivni boshiga qushish va olib tashlash
-//arr.unshift(0); // qushadi
-//console.log(arr);
+//-------------------------
 
-//arr.shift(); // olib tashlaydi
-//console.log(arr);
-//---------------------- massivni oxiriga qushish va olib tashlash
+// const bmw = {
+//   color: "black",
+//   isBuy: false,
+// };
 
-//arr.pop(); // ayrish
+// function copyObj(obj) {
+//   let ObjCopy = {};
+//   for (let key in obj) {
+//     ObjCopy[key] = obj[key];
+//   }
+//   return ObjCopy;
+// }
 
-//arr.push(5);// qushish
+// const nexiaR3 = {
+//   color: "black",
+//   isBuy: false,
+//   shum: {
+//     a: 100,
+//     b: 200,
+//   },
+// };
 
-//console.log(arr);
+// const spark = copyObj(nexiaR3);
+// spark.color = "red";
+// console.log(nexiaR3);
+// console.log(spark);
 
-//------------------------------
+// const nexia2 = {
+//   color: "red",
+//   isBuy: true,
+// };
 
-//for (let i = 0; i < arr.length; i++) {
-//  console.log(arr[i]);
-//}
+// const extra = {
+//   shum: 250,
+// };
 
-//for (let val of arr) {
-//  console.log(arr);
-//}
+// console.log(Object.assign(nexia2, extra));
+// // Object.assign bu orqali obyektlarni qushib yuborsa buladi
 
-//const color = ["red", "yellow", "blue"];
-// metodda val bu metod argumenti // index bu soylahsuvi // arr bu arrayni uzi
-//color.forEach(function (val, index, arr) {
-//  console.log(val, index);
-//});
+// const newcar = Object.assign({}, nexia2);
+// newcar.isBuy = false;
+// newcar.color = "blue";
+// console.log(nexia2);
+// console.log(newcar);
+// //--------------------------------
 
-// const question = prompt("", "");
-// const answer = question.split(", "); // massivni date-type-string ga aylantirib beradi
-// //console.log(answer);
-// console.log(answer.join("; "));
+// //-----------------massivlarni kapirovka qilish usuli
 
-//-----------------------
-const number = [2, 15, 25, 35, 8];
-number.sort(sortArr);
-console.log(number);
+// const arr = [1, 2, 3, 4];
+// const newarr = arr.slice();
+// newarr[1] = 22;
+// console.log(arr);
+// console.log(newarr);
 
-function sortArr(a, b) {
-  return a - b;
+//------------------------SPREAD OPERATORLARI
+// const car = ["bmw", "mers", "tesla"],
+//   plane = ["uzbairways", "turkish", "usa"],
+//   texnology = [...car, ...plane, "gm"];
+// console.log(texnology);
+
+function numb(a, b, ...c) {
+  console.log(a, b, c);
 }
+numb(1, 2, 4, 5, 6, 7);
+
+function func(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+func(...numbers);
